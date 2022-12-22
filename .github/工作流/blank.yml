@@ -36,7 +36,7 @@ jobs:
           docker tag k8s.gcr.io/metrics-server/metrics-server:v0.6.2 registry.cn-hangzhou.aliyuncs.com/k8siogrc/metrics-server:v0.6.2
       - name: loadAliyun Image server & push images.
         run: |
-          docker login --username=${{ secrets.ALIYUNUSERNAME }} --password=${{ secrets.ALIYUNPASSWORD }} registry.cn-hangzhou.aliyuncs.com
+          docker login --username-${{ secrets.ALIYUNUSERNAME }} --password-${{ secrets.ALIYUNPASSWORD }} registry.cn-hangzhou.aliyuncs.com
           docker push registry.cn-hangzhou.aliyuncs.com/k8siogrc/metrics-server:v0.6.2
       - name: push compietions
         run: |
